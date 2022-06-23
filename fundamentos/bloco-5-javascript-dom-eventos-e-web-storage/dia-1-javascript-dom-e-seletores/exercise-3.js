@@ -1,0 +1,1 @@
+/* 3. Crie uma função que mude a cor do quadrado vermelho para branco.*/

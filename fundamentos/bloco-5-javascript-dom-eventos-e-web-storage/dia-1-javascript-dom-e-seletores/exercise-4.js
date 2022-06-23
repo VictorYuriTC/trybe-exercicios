@@ -1,0 +1,1 @@
+/* 4. Crie uma função que corrija o texto da tag <h1>. */
