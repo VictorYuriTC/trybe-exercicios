@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+
+      const elem = (elementName) => {
+        return document.createElement(elementName);
+      }
+      const append = (element) => {
+        return document.body.appendChild(element);
+      }
+
+/*1.*/const h1 = elem('h1');
+      h1.innerText = 'Exercício 5.2 - JavaScript DOM';
+      append(h1);
+
+/*2.*/const main = elem('main');
+      main.classList = 'main-content';
+      append(main);
+
+/*3.*/const section = elem('section');
+      section.classList = 'center-content';
+      append(section);
+
+/*4.*/const p = elem('p');
+      p.innerText =
+      `Hello! That's just a test, so don't panic. Everthing
+      will be okay within a few minutes. Enjoy your studies!`
+      section.appendChild(p);
+
+/*5.*/const leftSection = elem('section');
+      leftSection.classList = 'left-content';
+      main.appendChild(leftSection);
+
+/*6.*/const rightSection = elem('section');
+      rightSection.classList = 'right-content';
+      main.appendChild(rightSection);
+
+/*7.*/const img = elem('img');
+      img.src = 'https://picsum.photos/200';
+      img.classList = 'small-image';
+      const leftContent = document.querySelectorAll('.left-content');
+      leftContent[0].appendChild(img);
+
+      const createLi = () => {
+        let i = 0;
+        while (i < 10) {
+          const li = elem('li');
+          li.innerText = 'Just trying to do something. Avoid reading these messageses.'
+          ul.appendChild(li)
+          i += 1;
+        }
+      }
+/*8.*/const ul = elem('ul');
+      rightSection.appendChild(ul);
+      createLi();
+
+/*9.*/const h3 = elem('h3');
+      h3.innerText = `What up, y'all!`
+      
+      const h3Render = () => {
+        let i = 0;
+        while (i < 3) {
+          main.appendChild(h3);
+          i += 1;
+        }
+      }
+
+      h3Render();
+
+/* Agora que você criou muita coisa, vamos
+fazer algumas alterações e remoções: */
+
+/*1.*/h1.classList = 'title';
+/*2.*/h3.classList = 'description';
+/*3.*/main.removeChild(leftSection);
+/*4.*/rightSection.style.marginRight = 'auto';
+/*5.*/const centerContent = document.querySelectorAll('.center-content');
+      centerContent[0].style.backgroundColor = 'green';
+/*6.*/ul.removeChild(ul.lastChild);
+      ul.removeChild(ul.lastChild);
+    </script>
+  </body>
+</html>
