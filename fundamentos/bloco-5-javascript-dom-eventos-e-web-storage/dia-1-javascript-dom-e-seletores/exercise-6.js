@@ -1,0 +1,1 @@
+/* 6. Crie uma função que exiba o conteúdo de todas as tags <p> no console. */
