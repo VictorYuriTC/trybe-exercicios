@@ -50,12 +50,12 @@ mensagem 'Dados enviados com sucesso! Obrigado por participar do concurso TrybeT
 
   <form action="" id="form">
 
-    <label for="user-full-name">
+    <label for="user-full-name" min="10" max="40">
       Nome completo:
       <input type="text" name="user-full-name" id="user-full-name">
     </label>
 
-    <label for="user-email">
+    <label for="user-email" min="10" max="50">
       Email:
       <input type="text" name="user-email" id="user-email">
     </label>
@@ -76,7 +76,7 @@ mensagem 'Dados enviados com sucesso! Obrigado por participar do concurso TrybeT
 
     <label for="user-reason">
       Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?
-      <textarea name="user-reason" id="user-reason" cols="30" rows="10"></textarea>
+      <textarea name="user-reason" id="user-reason" max="500" cols="30" rows="10"></textarea>
     </label>
 
     <br><br>
