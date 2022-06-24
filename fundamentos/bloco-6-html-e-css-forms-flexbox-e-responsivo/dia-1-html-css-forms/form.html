@@ -1,0 +1,121 @@
+<!-- 
+  
+1. O formulário deverá permitir que a pessoa usuária insira os seguintes campos:
+Nome Completo:
+Limitado entre 10 e 40 caracteres.
+E-mail:
+Limitado entre 10 e 50 caracteres.
+Destino Preferido:
+4 opções: Cidade, Campo, Praia, Montanhas.
+Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?
+Limite de 500 caracteres.
+Qual a melhor data para realizar sua viagem?
+Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+Esses serão os principais campos utilizadas nos próximos exercícios.
+
+2. Crie um botão para enviar as informações preenchidas.
+Agora vamos utilizar um pouco de javascript, para isso crie o arquivo script.js e o referencie no HTML.
+Dica: Coloque a tag <script> no final do seu body.
+
+3. Interrompa o comportamento padrão do botão submit utilizando o método preventDefault(). Nossa amiga
+Carol Silva nos contou um pouco sobre como fazer isso, lembra?
+
+4. Crie um botão que limpe as informações contidas nos campos;
+
+
+Bônus
+1. A TrybeTrip precisa muito de fotos para divulgar seus concursos. Tendo isso em mente, faça com que
+somente quem autorizar o uso de imagens possa enviar suas informações.
+
+2. Faça a validação dos campos com limite de caracteres. Caso não estejam dentro do esperado ao clicar
+no botão de submit, um alerta deve ser mostrado com a mensagem: 'Dados Inválidos'. Caso contrário, a
+mensagem 'Dados enviados com sucesso! Obrigado por participar do concurso TrybeTrip.' deverá aparecer na tela.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 id="title">
+    Concorra a uma viagem incrível para o Xaxim!
+  </h1>
+
+  <form action="" id="form">
+
+    <label for="user-full-name">
+      Nome completo:
+      <input type="text" name="user-full-name" id="user-full-name">
+    </label>
+
+    <label for="user-email">
+      Email:
+      <input type="text" name="user-email" id="user-email">
+    </label>
+
+    <br><br>
+
+    <label for="user-destination">
+      Destino Preferido:
+      <select name="user-destination" id="user-destination">
+        <option value="city">Cidade</option>
+        <option value="countryside">Campo</option>
+        <option value="beach">Praia</option>
+        <option value="mountains">Montanhas</option>
+      </select>
+    </label>
+
+    <br><br>
+
+    <label for="user-reason">
+      Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?
+      <textarea name="user-reason" id="user-reason" cols="30" rows="10"></textarea>
+    </label>
+
+    <br><br>
+
+    <label for="user-schedule">
+      Qual a melhor data para realizar sua viagem?
+      Data: <input type="text" name="user-schedule" placeholder="dd/mm/aaaa" id="user-schedule">
+    </label>
+
+    <br><br>
+
+    <label for="newsletter">
+      Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+      <input type="checkbox" name="newsletter" id="newsletter">
+    </label>
+
+    <br><br>
+
+    <label for="user-agreement">
+      Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+      <input type="checkbox" name="user-agreement" id="user-agreement">
+    </label>
+
+    <br><br>
+
+    <input type="submit" id="button-submit-info"> </input>
+
+    <button type="button" id="button-clear-info">
+      Limpar formulário
+    </button>
+
+  </form>
+
+  <br><br>
+
+  <footer id="footer">
+    Concurso promovido pela Nunu's S/A. Algum direito não é reservado.
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
