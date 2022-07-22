@@ -32,8 +32,59 @@
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
     </div>
-    <script src="./exercise-1.js">
+    <script>
+      const INITIAL_STATE = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+
+      const NEXT_COLOR = 'NEXT_COLOR';
+      const PREVIOUS_COLOR = 'PREVIOUS_COLOR'
+
+      const reducer = (state = INITIAL_STATE, { type }) => {
+        switch (type) {
+          case NEXT_COLOR:
+            return {
+              ...state,
+              index: state.index === state.colors.length - 1 ? 0 : state.index += 1,
+            };
+          case PREVIOUS_COLOR:
+            return {
+              ...state,
+              index: state.index === 0 ? state.colors.length - 1 : state.index -= 1,
+            };
+          default:
+            return state;
+        };
+      };
+
+      const store = Redux.createStore(
+        reducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+      const BUTTON_NEXT_COLOR = document.getElementById('next');
+
+      const BUTTON_PREVIOUS_COLOR = document.getElementById('previous');
+
+      BUTTON_NEXT_COLOR.addEventListener('click', () => {
+        store.dispatch({ type: NEXT_COLOR });
+        console.log(currentState);
+      });
+
+      BUTTON_PREVIOUS_COLOR.addEventListener('click', () => {
+        store.dispatch({ type: PREVIOUS_COLOR });
+        console.log(currentState);
+      });
+
+      store.subscribe(() => {
+        const { colors, index } = store.getState();
+        const value = document.getElementById('value');
+        const container = document.getElementById('container');
+
+        value.innerHTML = colors[index];
+        container.style.backgroundColor = colors[index];
+      });
+
     </script>
   </body>
 </html>
-
